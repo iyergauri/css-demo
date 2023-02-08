@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+:root {
+  --bg: #F8F0FB;
+  --highlight: #CAD5CA;
+  --lowlight: #6320EE;
+}
+
+body,
+button {
+  font-family: 'Oswald', sans-serif;
+  background-color: var(--bg);
+}
+
+.heading {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 2em;
+}
+
+@media (max-width: 500px) {
+  .content {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .text {
+    padding-bottom: 2em;
+  }
+}
+
+.pic {
+  max-width: 350px;
+  border-radius: 5px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+nav {
+  background-color: var(--highlight);
+  position: sticky;
+  border-radius: 0.5em;
+  text-align: center;
+}
+
+.showModal {
+  cursor: pointer;
+  background-color: var(--highlight);
+  border: none;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+@keyframes buttonHover {
+  from {
+    background-color: var(--highlight);
+    color: black;
+  }
+
+  to {
+    background-color: var(--lowlight);
+    color: white;
+  }
+}
+
+.showModal:hover {
+  animation: buttonHover 1s forwards;
+}
+
+.modal {
+  position: absolute;
+  background-color: var(--lowlight);
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  margin: -25%;
+  color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  animation: fadeIn 0.5s;
+}
+
+.close {
+  float: right;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.modalText {
+  width: fit-content;
+  margin: 12px auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1
+  }
+}
